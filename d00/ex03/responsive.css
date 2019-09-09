@@ -1,0 +1,65 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   responsive.css                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rpapagna <rpapagna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/10 20:57:04 by rpapagna          #+#    #+#             */
+/*   Updated: 2019/06/10 21:21:27 by rpapagna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+body {
+	margin: 5px;
+}
+H1 {
+	color:rgba(204, 0, 0, 0.849);
+	text-align: center;
+	text-shadow: -1.5px -1px 0 rgba(  0,  0,  0,   1),
+				   -5px  5px 0 rgba(255,255,255, 0.2);
+}
+H2 {
+	color: black;
+	text-align: center;
+	text-shadow: -1px 0px 0 rgb(255, 255, 255);
+	font-size: 1.2vw;
+	font-style: bold;
+}
+H3 {
+	color: black;
+	text-align: right;
+	vertical-align: top;
+	font-size: 0.7vw;
+	font-weight: normal;
+	margin-top: 0%;
+	margin-bottom: 0%;
+}
+H4 {
+	color: black;
+	text-align: left;
+	vertical-align: bottom;
+	font-size: 0.7vw;
+	font-weight: normal;
+	margin-top: 0%;
+	margin-bottom: 0%;
+	}
+#t00 {
+	width:100%;
+}
+td {
+	width: 5.5%;
+	border:1px solid black;
+	padding-top: 0;
+}
+th {
+	width: 5.5%;
+	border:20px solid transparent;
+	border-collapse: collapse;
+}
+.celldark {
+	background: rgb(128, 126, 126);
+}
+.celllight {background: rgb(168, 167, 167);}
+.cellodd {background-color:rgba(144, 0, 180, 0.22);}
+.celleven {background-color:rgba(204, 0, 255, 0.404);}

@@ -1,0 +1,198 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   doft.css                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rpapagna <rpapagna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/10 20:56:20 by rpapagna          #+#    #+#             */
+/*   Updated: 2019/09/09 14:46:31 by rpapagna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+p {
+  font-size: 0.8vw;
+  margin:0;
+  font-family: Verdana;
+}
+#day42 {
+	display: inline-block;
+	width: 35%;
+}
+#loupe {
+	width: 21%;
+	z-index: 2;
+	margin-left: 39%;
+	position: absolute;
+}
+#top-right {
+	width: 100%;
+	height: auto;
+	display: inline-block;
+	float: right;
+	width: 3%;
+}
+#refresh {
+	width: 60%;
+	display: block;
+	margin-left: 35%;
+}
+#close {
+	width: 60%;
+	display: block;
+	margin-top: 210%;
+	margin-left: 35%;
+}
+#arrow {
+	display: block;
+	width: 60%;
+	margin: auto;
+	margin-top: 10%;
+}
+#main {
+	display:block;
+  	width:60%;
+  	margin:auto;
+  	margin-top:10%;
+}
+#eye {
+	display:block;
+  	width:60%;
+  	margin:auto;
+	margin-top:10%;
+	border: 3px solid red;
+	border-radius: 3px;
+}
+#tool {
+	display:block;
+  	width:60%;
+  	margin:auto;
+  	margin-top:10%;
+}
+#chat {
+	display:block;
+  	width:60%;
+  	margin:auto;
+  	margin-top:10%;
+}
+#cluster {
+	width: 100%;
+	display: block;
+	margin: auto;
+	height: 100%;
+}
+#ikea {
+	width:10%;
+	height: 43px;
+	float: right;
+	margin-top: -22%;
+	margin-right: 57%;
+	position: relative;
+}
+#apple {
+	width:20%;
+	height: 43px;
+	float: right;
+	margin-top: -22%;
+	margin-right: 0%;
+	position: relative;
+}
+#book {
+	display:block;
+	width:60%;
+	margin:auto;
+	margin-top:10%;
+}
+#towel {
+	display:block;
+	width:60%;
+	margin:auto;
+	margin-top:10%;
+}
+#bricks {
+	display:block;
+	background : url("resources/brick.jpg");
+	background-repeat: repeat;
+	background-size: 27%;
+	margin-top: 8%;
+}
+#big {
+	font-size: 2vw;
+	font-family: Georgia;
+}
+#ord {
+	text-shadow: 6px 6px 5px red;
+}
+#form {
+	width: 65%;
+	height: 10%;
+	display: inline-block;
+	margin-top: 1%;
+	font-size: 0.8vw;
+}
+#response {
+
+}
+#italic {font-style: italic;}
+.brick {
+	display: block;
+	width:30%;
+	visibility: hidden;
+}
+.gray-block {
+	background-color: rgb(144, 144, 144);
+	box-shadow: 10px 10px 5px black;
+	border-radius: 10px;
+}
+.mid {
+	display: inline-block;
+	width: 70%;
+	height: 50%;
+	margin-top: 2%;
+	margin-left: 15%;
+}
+.top-block {
+	width: 74%;
+	height: auto;
+	margin: auto;
+	margin-top: 1%;
+	padding: 1%;
+	position: relative;
+	z-index: 1;
+}
+.left-block {
+	width: 8%;
+	height: auto;
+	padding: 1%;
+	float: left;
+	padding-bottom: 2%;
+}
+.mid-block {
+	width: 72%;
+	height: auto;
+	padding: 1%;
+	float: left;
+	margin-left: 3%;
+	z-index: 1;
+}
+.right-block {
+	width: 8%;
+	height: auto;
+	padding: 1%;
+	float: right;
+	margin-left: 1%;
+	padding-bottom: 13%;
+}
+.greenbox {
+	display: inline-block;
+	background-color: rgb(136, 255, 137);
+	width: 36%;
+	height: 75px;
+	z-index: 4;
+	margin-top: -6%;
+	margin-left: -6%;
+	box-shadow: 10px 10px 5px black;
+	border-radius: 10px;
+	padding: 1%;
+	padding-bottom: 5%;
+}

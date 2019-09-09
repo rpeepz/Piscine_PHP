@@ -1,0 +1,47 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   menu.css                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rpapagna <rpapagna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/10 21:26:01 by rpapagna          #+#    #+#             */
+/*   Updated: 2019/09/09 13:13:59 by rpapagna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+.dropbtn {
+	background-color: rgb(68, 17, 125);
+	color: white;
+	padding: 15px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+}
+.dropbtn:hover, .dropbtn:focus {
+	background-color: rgb(56, 14, 104);
+}
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: rgb(137, 78, 206);
+	min-width: 160px;
+	overflow: auto;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+.dropdown:hover .dropdown-content{ 
+	display: block;
+}
+.dropdown a:hover {background-color: #ddd; transition: all ease 0.5s}
+.show {display: block;}
