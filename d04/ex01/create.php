@@ -15,12 +15,13 @@
 	<body>
 		<div class = "container form-signin">
 			<?php
-				$path = "../htdocs/private";
-				$file = $path."/passwd";
-				if (!file_exists($path)) {
-					mkdir ("../htdocs/");
-					mkdir ($path);
-				}
+				// $path = "../htdocs/private";
+				// $file = $path."/passwd";
+				// if (!file_exists($path)) {
+				// 	mkdir ("../htdocs/");
+				// 	mkdir ($path);
+				// }
+				// output session info to file
 				$msg = '';
 				if (!empty($_POST['login']) && !empty($_POST['passwd'])) {
 					if (!isset($_SESSION['login'])) {
