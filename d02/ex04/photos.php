@@ -19,7 +19,7 @@ if ($argc == 2) {
 		print "Nothing returned from url"."\n";
 		return;
 	}
-	preg_match("/^((http[s]?|ftp):\/)?\/?([^:\/\s]+)($|(\/[^*]+))/m", $argv[1], $path);
+	preg_match("/^((http[s]?|ftp):\/)?\/?([^:\/\s]+)(|(\/[^*]+))/m", $argv[1], $path);
 	if (is_dir($path[3]) === false) {
 		mkdir($path[3]);
 	}
