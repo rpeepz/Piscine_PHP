@@ -15,6 +15,12 @@
 	<body>
 		<div class = "container form-signin">
 			<?php
+				$path = "../htdocs/private";
+				$file = $path."/passwd";
+				if (!file_exists($path)) {
+					mkdir ("../htdocs/");
+					mkdir ($path);
+				}
 				$msg = '';
 				if (!empty($_POST['login']) && !empty($_POST['passwd'])) {
 					if (!isset($_SESSION['login'])) {
@@ -23,8 +29,7 @@
 						$_SESSION['timeout'] = time() + 3600;
 						$_SESSION['valid'] = true;
 						print "Account create success!<br>";
-					}
-					if ($_SESSION['valid'] == true) {
+					} else {
 						if ($_POST['login'] == $_SESSION['login']
 						&& $_POST['passwd'] == $_SESSION['passwd']) {
 							$msg = "Account Exists!";
@@ -33,6 +38,8 @@
 							$msg = 'Wrong username or password';
 						}
 					}
+					$tab['login'] = $_SESSION['login'];
+					$tab['passwd'] = hash(sha256, $_SESSION['passwd']);
 				} else {
 					print "ERROR<br>";
 					exit();
