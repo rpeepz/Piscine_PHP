@@ -35,7 +35,7 @@
 						foreach ($elem as $login=>$value) {
 							if ($value == $tab['login']) {
 								print "ERROR\n";
-								print "duplicate found: '".$value."'";
+								print "duplicate found: '".$value."'<br>";
 								exit();
 							}
 						}
