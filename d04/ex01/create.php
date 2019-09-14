@@ -1,4 +1,3 @@
-
 <?php
 	ob_start();
 	session_start();
@@ -15,50 +14,38 @@
 	<body>
 		<div class = "container form-signin">
 			<?php
-				// $path = "../htdocs/private";
-				// $file = $path."/passwd";
-				// if (!file_exists($path)) {
-				// 	mkdir ("../htdocs/");
-				// 	mkdir ($path);
-				// }
-				// output session info to file
 				$msg = '';
-				if (!empty($_POST['login']) && !empty($_POST['passwd'])) {
-					if (!isset($_SESSION['login'])) {
-						$_SESSION['login'] = $_POST['login'];
-						$_SESSION['passwd'] = $_POST['passwd'];
-						$_SESSION['timeout'] = time() + 3600;
-						$_SESSION['valid'] = true;
-						print "Account create success!<br>";
-					} else {
-						if ($_POST['login'] == $_SESSION['login']
-						&& $_POST['passwd'] == $_SESSION['passwd']) {
-							$msg = "Account Exists!";
-						}
-						else {
-							$msg = 'Wrong username or password';
+				$tab['login'] = $_POST['login'];
+				$tab['passwd'] = hash(sha256, $_POST['passwd']);
+
+				$path = "../htdocs/private";
+				$file = $path."/passwd";
+				
+				if (!file_exists($path)) {
+					mkdir ("../htdocs/");
+					mkdir ($path);
+				}
+				if (!file_exists($file)) {
+					$unserialized[] = $tab;
+					$serialized[] = serialize($unserialized);
+					file_put_contents($file, $serialized);
+				} else {
+					$unserialized = unserialize(file_get_contents($file));
+					foreach ($unserialized as $elem) {
+						foreach ($elem as $login=>$value) {
+							if ($value == $tab['login']) {
+								print "ERROR\n";
+								print "duplicate found: '".$value."'";
+								exit();
+							}
 						}
 					}
-					$tab['login'] = $_SESSION['login'];
-					$tab['passwd'] = hash(sha256, $_SESSION['passwd']);
-				} else {
-					print "ERROR<br>";
-					exit();
+					$unserialized[] = $tab;
+					$serialized = serialize($unserialized);
+					file_put_contents($file, $serialized);
 				}
-			?>
-		</div>
-		<div class = "container">
-			<form class="form-signin" role="form" method="post">
-				<h4 class="form-signin-heading"><?php echo $msg; ?></h4>
-				Username: <br>
-				<input type="text" class="form-control" name="login" required autofocus>
-				<br>
-				Password: <br>
-				<input type="password" class="form-control" name="passwd" required>
-				<button class = "btn btn-lg btn-primary btn-block" type="submit"
-					name="submit" value="OK">Login</button>
-			</form>
-			Click here to clean <a href = "logout.php" tite = "Logout">Session.
+				print "account created<br>";?>
+				Click here to <a href="index.html" tite="back">go back.
 		</div>
 	</body>
 </html>

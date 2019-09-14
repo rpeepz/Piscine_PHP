@@ -13,38 +13,39 @@
 	</head>
 	<body>
 		<div class = "container form-signin">
-            <?php
+			<?php
 				$msg = '';
-				if (!empty($_POST['oldpw']) && !empty($_POST['newpw'])) {
-                    if (!isset($_SESSION['login'])) {
-						$msg = "Session invalid, please create an account<br>";
-					} else {
-                        if ($_POST['oldpw'] == $_SESSION['passwd']
-                        && $_POST['newpw'] != $_POST['oldpw']) {
-                            $_SESSION['passwd'] = $_POST['newpw'];
-                            $msg = "Password changed<br>";
-                        } else {
-							$msg = 'Password format incorrect<br>';
+				$tab['login'] = $_POST['login'];
+				$tab['newpw'] = hash(sha256, $_POST['newpw']);
+				$tab['oldpw'] = hash(sha256, $_POST['oldpw']);
+
+				$path = "../htdocs/private";
+				$file = $path."/passwd";
+				
+				$unserialized = unserialize(file_get_contents($file));
+				$flag = 0;
+				foreach ($unserialized as $key=>$elem) {
+					if ($elem['login'] == $tab['login']) {
+						if ($elem['passwd'] == $tab['oldpw']) {
+							$unserialized["$key"]['passwd'] = $tab['newpw'];
+							$flag = 1;
+						}
+						else {
+							$flag = -1;
+							break;
 						}
 					}
-				} else {
-					print "ERROR<br>";
-					exit();
 				}
+				if ($flag == 1) {
+					$serialized = serialize($unserialized);
+					file_put_contents($file, $serialized);
+					print "OK password changed<br>";
+				} else if ($flag == -1) {
+					print "ERROR2 Password doesnt match<br>";
+				} else
+					print "ERROR1 Login doesnt match<br>";
 			?>
-		</div>
-		<div class = "container">
-			<form class="form-signin" role="form" method="post">
-				<h4 class="form-signin-heading"><?php echo $msg; ?></h4>
-				old password: <br>
-				<input type="text" class="form-control" name="oldpw" required autofocus>
-				<br>
-				new password: <br>
-				<input type="password" class="form-control" name="newpw" required>
-				<button class = "btn btn-lg btn-primary btn-block" type="submit"
-					name="submit" value="OK">Login</button>
-			</form>
-			Click here to clean <a href = "logout.php" tite = "Logout">Session.
+			Click here to <a href="index.html" tite="back">go back.
 		</div>
 	</body>
 </html>

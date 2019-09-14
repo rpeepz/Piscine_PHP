@@ -14,14 +14,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Login</title>
+		<title>Modify</title>
 	</head>
 	<body>
 		<div class="container">
 			<form class="form-signin" role="form" method="post" action="modif.php">
                 <h4 class="form-signin-heading">Change password</h4>
+				Username: <br>
+				<input type="text" class="form-control" name="login" required autofocus>
+				<br>
 				old password: <br>
-				<input type="text" class="form-control" name="oldpw" required autofocus>
+				<input type="password" class="form-control" name="oldpw" required>
 				<br>
 				new password: <br>
 				<input type="password" class="form-control" name="newpw" required>
