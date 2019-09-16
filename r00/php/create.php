@@ -23,7 +23,7 @@
 			$file = $path."/passwd";
 				
 			if (!file_exists($path)) {
-				mkdir ("htdocs/");
+				mkdir ("../htdocs/");
 				mkdir ($path);
 			}
 			if (!file_exists($file)) {
@@ -46,7 +46,7 @@
 				$serialized = serialize($unserialized);
 				file_put_contents($file, $serialized);
 			}
-			print "account created<br>";?>
+			print "account '".$tab['login']."' created<br>";?>
 			Click here to <a href="../login.html" tite="back">go back.
 		</div>
 	</body>

@@ -27,3 +27,30 @@
 	display: inline-block;
 	justify-items: auto;
 }
+#auto-parts {
+	width:35%;
+}
+#brakes {
+	width: 40%;
+}
+#clutch {
+	width: 40%;
+}
+#alternator {
+	width: 40%;
+}
+#aircon {
+	width:40%;
+}
+#led-light {
+	width: 40%;
+}
+#p-turbo {
+	width: 40%;
+}
+#rims {
+	width: 40%;
+}
+#generic-turbo {
+	width: 40%;
+}

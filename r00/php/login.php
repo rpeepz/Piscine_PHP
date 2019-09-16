@@ -53,7 +53,8 @@
                     }
                 }
             }
-            print "Unregistered Username";
+            print "The name '".$_POST['login']."' is unregistered<br>";
+            print "Create an account to continue";
             ?>
                 <form class="form-signin" role="form" method="post" action="create.php">
                     Username: <br>
