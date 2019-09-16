@@ -1,22 +1,24 @@
 # Piscine_PHP
-PHP pool of 2 weeks to become familiar with the languages of the web.
+Learn a web development language at a fast pace
 
-<br>
-
-## PDF's
-
-| | |
-| :-: | :-: |
-| [Subject Day_00] | [Subject Day_01] |
-| [Subject Day_02] | [Subject Day_03] |
-| [Subject Day_04] | [Subject Day_05] |
-| [Subject Day_06] | [Subject Day_07] |
-| [Subject Day_08] | [Subject Day_09] |
-| [Subject Rush00] | [Subject Rush01] |
+| Daily Exercise | Score | Subject| 
+| :- | :-: | :-: |
+| HTML/CSS | [90/100] | [Subject Day_00] |
+| Php basics | [47/100] | [Subject Day_01] |
+| Regex | [60/100] | [Subject Day_02] |
+| Pamp/Server |  | [Subject Day_03] |
+| Sessions |  | [Subject Day_04] |
+| SQL |  | [Subject Day_05] |
+| Object-Oriented Php |  | [Subject Day_06] |
+| Object-Oriented Php |  | [Subject Day_07] |
+| Object-Oriented Php |  | [Subject Day_08] |
+| JS/JQuery Ajax |  | [Subject Day_09] |
+| 2 day rush weekend project: build an e-commerce website | [77/100] | [Subject Rush00] |
+| 2 day rush weekend project: build web-based battleship |  | [Subject Rush01] |
 
 [Subject Day_00]: https://github.com/rpeepz/Piscine_PHP/blob/master/pdf/d00.en.pdf "HTML-CSS"
 [Subject Day_01]: https://github.com/rpeepz/Piscine_PHP/blob/master/pdf/d01.en.pdf "PHP"
-[Subject Day_02]: https://github.com/rpeepz/Piscine_PHP/blob/master/pdf/d02.en.pdf "PHP"
+[Subject Day_02]: https://github.com/rpeepz/Piscine_PHP/blob/master/pdf/d02.en.pdf "Regex"
 [Subject Day_03]: https://github.com/rpeepz/Piscine_PHP/blob/master/pdf/d03.en.pdf "PHP-MAMP"
 [Subject Day_04]: https://github.com/rpeepz/Piscine_PHP/blob/master/pdf/d04.en.pdf "PHP-MAMP"
 [Subject Day_05]: https://github.com/rpeepz/Piscine_PHP/blob/master/pdf/d05.en.pdf "SQL"
