@@ -1,6 +1,6 @@
-create table if not exists ft_table (
-    id int not NULL AUTO_INCREMENT primary key,
-    `login` varchar(8) not NULL DEFAULT 'toto',
-    group ENUM('staff', 'student', 'other') not NULL,
-    creation_date date not NULL
+CREATE TABLE IF NOT EXISTS ft_table (
+	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`login` VARCHAR(8) NOT NULL DEFAULT 'toto',
+	`group` ENUM('staff', 'student', 'other') NOT NULL,
+	`creation_date` DATE NOT NULL
 );
