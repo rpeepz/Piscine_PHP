@@ -10,11 +10,11 @@ Learn a web development language at a fast pace
 | Sessions      | [60/100] | [Subject Day_04] |
 | SQL           | [65/100] | [Subject Day_05] |
 | Object-Oriented Php | [0/100] | [Subject Day_06] |
-| Object-Oriented Php |  | [Subject Day_07] |
+| Object-Oriented Php | [100/100] | [Subject Day_07] |
 | Object-Oriented Php | [0/100] | [Subject Day_08] |
-| JS/JQuery Ajax || [Subject Day_09] |
+| JS/JQuery Ajax | [0/100]| [Subject Day_09] |
 | 2 day rush weekend project: build an e-commerce website | [77/100] | [Subject Rush00] |
-| 2 day rush weekend project: build web-based battleship |  | [Subject Rush01] |
+| 2 day rush weekend project: build web-based battleship | [0/100] | [Subject Rush01] |
 
 <br>
 
