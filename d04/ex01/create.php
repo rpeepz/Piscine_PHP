@@ -35,7 +35,8 @@
 						foreach ($elem as $login=>$value) {
 							if ($value == $tab['login']) {
 								print "ERROR\n";
-								print "duplicate found: '".$value."'<br>";
+								print "duplicate found: '".$value."'<br>redirecting...";
+								header('Refresh: 2; URL = index.html');
 								exit();
 							}
 						}

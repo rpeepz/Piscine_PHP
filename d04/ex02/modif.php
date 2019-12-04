@@ -10,6 +10,7 @@
 <html lang = "en">
 	<head>
 		<title>Modif</title>
+		<link rel="stylesheet" type="text/css" href="account.css">
 	</head>
 	<body>
 		<div class = "container form-signin">
@@ -41,9 +42,16 @@
 					file_put_contents($file, $serialized);
 					print "OK password changed<br>";
 				} else if ($flag == -1) {
-					print "ERROR2 Password doesnt match<br>";
-				} else
-					print "ERROR1 Login doesnt match<br>";
+					// bad password
+					print "AMBIGUOUS ERROR2<br>Login or Password invalid<br>";
+					header('Refresh: 2; URL = index.html');
+					exit();
+				} else {
+					// bad login
+					print "AMBIGUOUS ERROR1<br>Login or Password invalid<br>";
+					header('Refresh: 2; URL = index.html');
+					exit();
+				}
 			?>
 			Click here to <a href="index.html" tite="back">go back.
 		</div>
