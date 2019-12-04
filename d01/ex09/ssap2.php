@@ -11,6 +11,20 @@ function ft_split($input)
 function ft_sort($i, $j)
 {
 	// custom sort
+	$i = 0;
+	$order = "abcdefghijklmnopqrstuvwxyz0123456789!\"
+			#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+	while (($i < strlen($a)) || ($i < strlen($b)))
+	{
+		$a_index = stripos($order, $a[$i]);
+		$b_index = stripos($order, $b[$i]);
+		if ($a_index > $b_index)
+			return (1);
+		else if ($a_index < $b_index)
+			return (-1);
+		else
+			$i++;
+	}
 }
 if ($argc > 1)
 {
