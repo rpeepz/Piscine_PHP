@@ -1,1 +1,3 @@
-select `title`, `summary` from `film` where (`title` like '%42%') or (`summary` like '%42%') order by duration asc;
+SELECT title, summary FROM film
+WHERE title LIKE '%42%' OR summary LIKE '%42%'
+ORDER BY duration ASC;
