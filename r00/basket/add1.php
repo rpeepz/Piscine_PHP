@@ -1,13 +1,28 @@
 <?php
 session_start();
 $csv = array_map('str_getcsv', file('../resources/data.csv'));
-
+?>
+<html lang = "en">
+	<head>
+		<title>add</title>
+		<link rel="stylesheet" type="text/css" href="../css/account.css">
+	</head>
+	<body>
+        <div class = "container form-signin">
+            
+            <?php
 if (isset($_SESSION['logged_user'])) {
     if (!isset($_SESSION['cart'])) {
         $_SESSION['total_items'] = 1;
         $_SESSION['total_price'] = $csv[1][1];
         $_SESSION['cart'] = array($csv[1][0]);
     } else {
+        if ($csv[1][2] == 0) {
+            print "Out of stock sorry!<br><br>";
+            print "sending shop page";
+            header('Refresh: 2; URL = ../shop_front.php');
+            exit();
+        }
         $_SESSION['total_items'] += 1;
         $_SESSION['total_price'] += $csv[1][1];
         array_push($_SESSION['cart'], $csv[1][0]);
@@ -28,12 +43,19 @@ if (isset($_SESSION['logged_user'])) {
         fwrite($fout, $to_write);
     }
     fclose($fout);
-    print "Added ".$csv[1][0]." to cart!";
-    header('Refresh: 2; URL = ../shop_front.php');
+    print "Added ".$csv[1][0]." to cart!<br>";
+    // header('Refresh: 2; URL = ../shop_front.php');
+    ?>
+    <button>
+        <a href="../shop_front.php" tite="back"> BACK</a>
+    </button>
+    <?php
 }
 else {
-    print "ERROR<br>";
-    print "must have account to add item to cart\n";
+    print "ERROR<br><br>";
+    print "not logged in. sending login page";
     header('Refresh: 2; URL = ../login.html');
 }
 ?>
+</body>
+</html>
