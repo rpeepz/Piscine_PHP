@@ -35,7 +35,7 @@
 					</div>
 				</div>
 			</div>
-			<img src="resources/top_banner.jpg" id="banner" alt="shop-banner">
+			<img src="resources/shop.png" id="banner" alt="shop-banner">
 		</div>
 					
 		<div class="mid">
