@@ -9,7 +9,7 @@
 	<body>
 		<div class = "container form-signin">
 			
-			<?php
+<?php
 	if ($_POST['login'] == $_SESSION['logged_user']){
                 $msg = '';
 				$tab['login'] = $_POST['login'];
@@ -45,10 +45,10 @@
 				} else
                 print "Login doesnt match<br>";
             } else {
-                print "unable to change password<br>";
-                print "You're not logged in as ".$_POST['login'];
+                print "unfinished page<br>ignore this option :) <br>";
+                // print "You're not logged in as ".$_POST['login'];
                 print "<br>redirecting...";
-                // header('Refresh: 2; URL =whoami.php');
+                header('Refresh: 2; URL = admin.php');
                 exit();
             }
                 ?>

@@ -36,7 +36,7 @@
 					foreach ($elem as $login=>$value) {
 						if ($value == $tab['login']) {
 							print "ERROR\n";
-							print "duplicate found: '".$value."' redirecting...<br>";
+							print "duplicate found: '".$value."'<br>redirecting...";
 							header('Refresh: 2; URL = ../login.html');
 							exit();
 						}
@@ -46,8 +46,11 @@
 				$serialized = serialize($unserialized);
 				file_put_contents($file, $serialized);
 			}
-			print "account '".$tab['login']."' created<br>";?>
-			Click here to <a href="../login.html" tite="back">go back.
+			print "account '".$tab['login']."' created<br><br>";?>
+			<a href="../login.html" tite="login">Login now</a>
+			<br>
+			<br>
+			<a href="../index.html" tite="home">Home</a>
 		</div>
 	</body>
 </html>

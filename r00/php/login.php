@@ -40,7 +40,7 @@
                                     exit();
                                 } else {
                                     print "Already logged in as ".$_SESSION['logged_user']."<br>redirecting...";
-                                    header('Refresh: 2; URL = ../login.html');
+                                    header('Refresh: 2; URL = ../index.html');
                                     exit();
                                 }
                             } else {

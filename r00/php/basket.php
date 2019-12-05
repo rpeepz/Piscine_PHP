@@ -1,5 +1,16 @@
 <?php
 session_start();
+?>
+
+<html lang = "en">
+	<head>
+		<title>Basket</title>
+		<link rel="stylesheet" type="text/css" href="../css/account.css">
+	</head>
+	<body>
+		<div class = "container form-signin">
+            
+<?php
 if (isset($_SESSION['logged_user'])) {
     if (isset($_SESSION['cart'])) {
         print "<h4>Cart</h4>";
@@ -13,15 +24,18 @@ if (isset($_SESSION['logged_user'])) {
         print "Cart is empty!\n";
     }
     
-?>
+    ?>
     <button>
         <a href="../shop_front.php" tite="back"> BACK</a>
     </button>
-<?php
+    <?php
 }
 else {
     print "ERROR<br>";
-    print "must have account to view cart\n";
+    print "must have account to view cart.";
+    print " sending login page";
     header('Refresh: 2; URL = ../login.html');
 }
 ?>
+    </body>
+</html>
