@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 if ($argc == 2) {
-	$user_agent = "Mozilla/5.0 (X11; U; Linux x86_64; de; rv:1.9.2.8) Gecko/20100723 Ubuntu/10.04 (lucid) Firefox/3.6.8";
+	$user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36";
 	
 	//init curl handle "ch" and set options
 	$ch = curl_init();
@@ -32,6 +32,8 @@ if ($argc == 2) {
 			array_push($photo, $link);
 		}
 	}
+	if (!$photo)
+		print ("url contains to photos\n");
 	foreach ($photo as $pic){
 		print $pic."\n";
 		preg_match("/[^\/]+$/m", $pic, $match);
