@@ -21,8 +21,10 @@
 				
 				$unserialized = unserialize(file_get_contents($file));
 				$flag = 0;
+				$exists = 1;
 				foreach ($unserialized as $key=>$elem) {
                     if ($elem['login'] == $tab['login']) {
+						$exists = 1;
                         if ($elem['passwd'] == $tab['oldpw']) {
                             $unserialized["$key"]['passwd'] = $tab['newpw'];
 							$flag = 1;
@@ -41,14 +43,18 @@
 					print "Incorrect password entered<br>";
 					print "<br>redirecting...";
 					header('Refresh: 2; URL =whoami.php');
-					// exit();
+					exit();
 				} else
                 print "Login doesnt match<br>";
             } else {
-                print "unable to change password<br>";
-                print "You're not logged in as ".$_POST['login'];
+				if ($exists == 0) {
+					print $_POST['login']." doesnt exist in our system<br>";
+				} else {
+					print "unable to change password<br>";
+					print "You're not logged in as ".$_POST['login'];
+				}
                 print "<br>redirecting...";
-                // header('Refresh: 2; URL =whoami.php');
+                header('Refresh: 2; URL =whoami.php');
                 exit();
             }
                 ?>
