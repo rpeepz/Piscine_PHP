@@ -2,7 +2,7 @@
     session_start();
 if (isset($_SESSION['logged_user']) && $_SESSION['logged_user'] != NULL && $_SESSION['logged_user'] == "admin") {
     print "loading admin page";
-    header('Refresh: 2; URL = admin.php');
+    header('Refresh: 1; URL = admin.php');
 } else if (isset($_SESSION['logged_user']) && $_SESSION['logged_user'] != NULL) {
     print "<h4>Logged in as '".($_SESSION['logged_user']."'</h4>");
 

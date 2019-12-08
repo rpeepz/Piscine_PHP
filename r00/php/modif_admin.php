@@ -4,7 +4,7 @@
 ?>
 <html lang = "en">
 	<head>
-        <title>Modif</title>
+        <title>Admin</title>
         <link rel="stylesheet" type="text/css" href="../css/account.css">
 	</head>
 	<body>
@@ -74,7 +74,7 @@
                 }
             } else {
                 print "forbidden<br>";
-                header('Refresh: 2; URL = ../index.html');
+                header('Refresh: 1; URL = ../index.html');
                 exit();
             }
                 ?>

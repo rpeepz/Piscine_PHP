@@ -8,7 +8,7 @@ $_SESSION['admin_change_newpw'] = "";
 ?>
 <html>
 	<head>
-        <title>admin</title>
+        <title>Admin</title>
         <link rel="stylesheet" type="text/css" href="../css/account.css">
     </head>
 	<body>
@@ -40,7 +40,7 @@ $_SESSION['admin_change_newpw'] = "";
 
 } else {
     print "forbidden<br>";
-    header('Refresh: 2; URL = ../index.html');
+    header('Refresh: 1; URL = ../index.html');
 }
 ?>
 	</body>

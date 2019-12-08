@@ -4,55 +4,53 @@
 ?>
 <html lang = "en">
 	<head>
-		<title>Modif</title>
+		<title>Admin</title>
+		<link rel="stylesheet" type="text/css" href="../css/account.css">
 	</head>
 	<body>
 		<div class = "container form-signin">
-			
-<?php
-	if ($_POST['login'] == $_SESSION['logged_user']){
-                $msg = '';
-				$tab['login'] = $_POST['login'];
-				$tab['newpw'] = hash(sha256, $_POST['newpw']);
-				$tab['oldpw'] = hash(sha256, $_POST['oldpw']);
-                
+			<?php
+	if ("admin" == $_SESSION['logged_user'] && $_POST['submit'] == 'adminOK') {
+                $to_del = $_POST['login'];
 				$path = "../htdocs/private";
 				$file = $path."/passwd";
-				
 				$unserialized = unserialize(file_get_contents($file));
 				$flag = 0;
-				foreach ($unserialized as $key=>$elem) {
-                    if ($elem['login'] == $tab['login']) {
-                        if ($elem['passwd'] == $tab['oldpw']) {
-                            $unserialized["$key"]['passwd'] = $tab['newpw'];
-							$flag = 1;
-						}
-						else {
-                            $flag = -1;
-							break;
-						}
+				foreach ($unserialized as $key=>$elem)
+					if ($elem['login'] == $to_del)
+						$flag = 1;
+					if ($to_del == "admin") {
+						print "What are you doing?<br>";
+						print "You cant delete admin SMH ...<br>";
+						print "<br>redirecting...";
+						header('Refresh: 3; URL = admin.php');
+						exit();
 					}
-				}
-				if ($flag == 1) {
+					if ($flag == 1) {
+						print "'".$to_del."' will be deleted<br>";
+						foreach ($unserialized as $key=>$elem)
+							if ($elem['login'] == $to_del) {
+								unset($unserialized["$key"]);
+					}
+					print_r ($unserialized);
                     $serialized = serialize($unserialized);
 					file_put_contents($file, $serialized);
-					print $_SESSION['logged_user']." password changed<br>";
-				} else if ($flag == -1) {
-					print "Incorrect password entered<br>";
+					print "'".$to_del."' deleted<br>";
+				} else {
+					print "user '".$to_del."' not found<br>";
 					print "<br>redirecting...";
-					header('Refresh: 2; URL =whoami.php');
-					// exit();
-				} else
-                print "Login doesnt match<br>";
+					header('Refresh: 2; URL = admin.php');
+					exit();
+				}
             } else {
                 print "unfinished page<br>ignore this option :) <br>";
-                // print "You're not logged in as ".$_POST['login'];
                 print "<br>redirecting...";
-                header('Refresh: 2; URL = admin.php');
+                header('Refresh: 1; URL = ../index.html');
                 exit();
             }
-                ?>
-			Click here to <a href="../index.html" tite="back">go back.
+				?>
+				<br><br>
+			<a href="admin.php" tite="back">go back.
                 </div>
 	</body>
 </html>

@@ -5,6 +5,7 @@
 <html lang = "en">
 	<head>
 		<title>Modif</title>
+		<link rel="stylesheet" type="text/css" href="../css/account.css">
 	</head>
 	<body>
 		<div class = "container form-signin">
@@ -38,7 +39,7 @@
 				if ($flag == 1) {
                     $serialized = serialize($unserialized);
 					file_put_contents($file, $serialized);
-					print $_SESSION['logged_user']." password changed<br>";
+					print "'".$_SESSION['logged_user']."' password changed<br>";
 				} else if ($flag == -1) {
 					print "Incorrect password entered<br>";
 					print "<br>redirecting...";
