@@ -4,7 +4,7 @@ Learn a web development language at a fast pace
 | Daily Exercise | Score | Subject| 
 | :- | :-: | :-: |
 | HTML/CSS      | [90/100] | [Subject Day_00] |
-| Php basics    | [47/100] | [Subject Day_01] |
+| Php basics    | [57/100] | [Subject Day_01] |
 | Regex         | [60/100] | [Subject Day_02] |
 | Pamp/Server   | [75/100] | [Subject Day_03] |
 | Sessions      | [60/100] | [Subject Day_04] |
